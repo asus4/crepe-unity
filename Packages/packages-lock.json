@@ -1,5 +1,28 @@
 {
   "dependencies": {
+    "com.cysharp.unitask": {
+      "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#2.3.1",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "33d32baea4d50040e0601b725a694dcf3dcf6640"
+    },
+    "com.github.asus4.tflite": {
+      "version": "https://github.com/asus4/tf-lite-unity-sample.git?path=/Packages/com.github.asus4.tflite#580a93c56efc9c1775e9b224944847b8d777a894",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "580a93c56efc9c1775e9b224944847b8d777a894"
+    },
+    "com.github.asus4.tflite.common": {
+      "version": "https://github.com/asus4/tf-lite-unity-sample.git?path=/Packages/com.github.asus4.tflite.common#580a93c56efc9c1775e9b224944847b8d777a894",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.github.asus4.tflite": "2.8.0"
+      },
+      "hash": "580a93c56efc9c1775e9b224944847b8d777a894"
+    },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
       "depth": 1,

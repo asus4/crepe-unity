@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#2.3.1",
+    "com.github.asus4.tflite": "https://github.com/asus4/tf-lite-unity-sample.git?path=/Packages/com.github.asus4.tflite#580a93c56efc9c1775e9b224944847b8d777a894",
+    "com.github.asus4.tflite.common": "https://github.com/asus4/tf-lite-unity-sample.git?path=/Packages/com.github.asus4.tflite.common#580a93c56efc9c1775e9b224944847b8d777a894",
     "com.unity.ide.vscode": "1.2.5",
     "com.unity.render-pipelines.universal": "10.8.1",
     "com.unity.test-framework": "1.1.31",
