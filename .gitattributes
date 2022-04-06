@@ -1,0 +1,5 @@
+# Assets
+*.wav filter=lfs diff=lfs merge=lfs -text
+
+# TensorFlow Lite modles
+*.tflite filter=lfs diff=lfs merge=lfs -text
