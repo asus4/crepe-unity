@@ -9,18 +9,17 @@ public class CrepeTest : MonoBehaviour
     [SerializeField, FilePopup("*.tflite")]
     private string modelPath = "";
     [SerializeField]
-    private bool useGPU = false;
-    [SerializeField]
     private AudioClip audioClip;
 
     private Crepe crepe;
-    private float[] inputSamples = new float[1024];
+    private readonly float[] inputSamples = new float[1024];
     private int index = 0;
     private StringBuilder sb = new StringBuilder();
+    private float lastFreq = 0;
 
     private void Start()
     {
-        crepe = new Crepe(modelPath, useGPU);
+        crepe = new Crepe(modelPath);
         Assert.AreEqual(1, audioClip.channels);
     }
 
@@ -34,17 +33,11 @@ public class CrepeTest : MonoBehaviour
         if ((index + 1024) < audioClip.samples)
         {
             audioClip.GetData(inputSamples, index);
-            float[] output = crepe.Predict(inputSamples);
-
-            sb.Clear();
-            sb.Append($"[{index}]=");
-            for (int i = 0; i < output.Length; i++)
-            {
-                sb.Append($"{output[i]:F4}  ");
-            }
-            Debug.Log(sb.ToString());
-
+            var result = crepe.Predict(inputSamples);
+            float diff = result.pitch - lastFreq;
+            Debug.Log($"[{index}]={result} diff:{diff:F2}");
             index += 1024;
+            lastFreq = result.pitch;
         }
     }
 }
